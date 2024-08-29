@@ -48,8 +48,7 @@ export const Badge = (props: Props) => {
             'background-color': props.badgeBackgroundColor ?? '#ffffff',
           }}
         >
-          {/* {props.footer?.text ?? 'Powered by'} */}
-          {'Powered byyyy'}
+          {props.footer?.text ?? 'Powered by'}
           <a
             ref={liteBadge}
             href={props.footer?.companyLink ?? 'https://flowiseai.com'}
