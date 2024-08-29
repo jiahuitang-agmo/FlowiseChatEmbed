@@ -7,7 +7,7 @@ import { CopyToClipboardButton, ThumbsDownButton, ThumbsUpButton } from '../butt
 import FeedbackContentDialog from '../FeedbackContentDialog';
 // import { AgentReasoningBubble } from './AgentReasoningBubble';
 import { TickIcon, XIcon } from '../icons';
-import { Document, Packer, Paragraph, TextRun } from 'docx'
+import { Document, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from 'file-saver';
 import { DownloadFileButton } from '../buttons/DownloadResponseButton';
 
@@ -30,7 +30,6 @@ type Props = {
   handleActionClick: (label: string, action: IAction | undefined | null) => void;
 };
 
-
 const DocxGenerator = (finalResponse: string): (() => Promise<void>) => {
   // Function to generate and download the .docx file
 
@@ -39,15 +38,13 @@ const DocxGenerator = (finalResponse: string): (() => Promise<void>) => {
 
   // Generate an array of Paragraphs for the docx document based on the input text
   const paragraphHolder: Paragraph[] = arraySplitText.map((textSnipet: string) => {
-    return textSnipet.trim().match(/^([0-9]{1,}.\s|[\\-\\a-zA-Z]?.?[\s]{0,}[*|#]{1,}(?!.*:))/g) !== null ? (
-      new Paragraph({
-        children: [new TextRun({ text: textSnipet.replace(/[#*]/g, ''), bold: true })],
-      })
-    ) : (
-      new Paragraph({
-        children: [new TextRun(textSnipet.replace(/[#*]/g, ''))],
-      })
-    );
+    return textSnipet.trim().match(/^([0-9]{1,}.\s|[\\-\\a-zA-Z]?.?[\s]{0,}[*|#]{1,}(?!.*:))/g) !== null
+      ? new Paragraph({
+          children: [new TextRun({ text: textSnipet.replace(/[#*]/g, ''), bold: true })],
+        })
+      : new Paragraph({
+          children: [new TextRun(textSnipet.replace(/[#*]/g, ''))],
+        });
   });
 
   // console.log('ArraySplitText: ', paragraphHolder);
@@ -66,7 +63,7 @@ const DocxGenerator = (finalResponse: string): (() => Promise<void>) => {
       const blob = await Packer.toBlob(doc);
       saveAs(blob, 'Proposed Tender Submission Document.docx');
     } catch (error) {
-      alert('Error in generating Docx file:'+ error);
+      alert('Error in generating Docx file:' + error);
     }
   };
 
@@ -269,45 +266,45 @@ export const BotBubble = (props: Props) => {
           <Avatar initialAvatarSrc={props.avatarSrc} />
         </Show>
         <div class="flex flex-col justify-start">
-          {props.showAgentMessages && props.message.agentReasoning && (
-            null
+          {
+            props.showAgentMessages && props.message.agentReasoning && null
             // <details ref={botDetailsEl} class="mb-2 px-4 py-2 ml-2 chatbot-host-bubble rounded-[6px]">
-              // {/* <summary class="cursor-pointer">
-              //   <span class="italic">Agent Messages</span>
-              // </summary>
-              // <br />
-              // <For each={props.message.agentReasoning}>
-              //   {(agent) => {
-              //     const agentMessages = agent.messages ?? [];
-              //     let msgContent = agent.instructions || (agentMessages.length > 1 ? agentMessages.join('\\n') : agentMessages[0]);
-              //     if (agentMessages.length === 0 && !agent.instructions) msgContent = `<p>Finished</p>`;
-              //     return (
-              //       <AgentReasoningBubble
-              //         agentName={agent.agentName ?? ''}
-              //         agentMessage={msgContent}
-              //         backgroundColor={props.backgroundColor}
-              //         textColor={props.textColor}
-              //         fontSize={props.fontSize}
-              //       />
-              //     );
-              //   }}
-              // </For> */}
+            // {/* <summary class="cursor-pointer">
+            //   <span class="italic">Agent Messages</span>
+            // </summary>
+            // <br />
+            // <For each={props.message.agentReasoning}>
+            //   {(agent) => {
+            //     const agentMessages = agent.messages ?? [];
+            //     let msgContent = agent.instructions || (agentMessages.length > 1 ? agentMessages.join('\\n') : agentMessages[0]);
+            //     if (agentMessages.length === 0 && !agent.instructions) msgContent = `<p>Finished</p>`;
+            //     return (
+            //       <AgentReasoningBubble
+            //         agentName={agent.agentName ?? ''}
+            //         agentMessage={msgContent}
+            //         backgroundColor={props.backgroundColor}
+            //         textColor={props.textColor}
+            //         fontSize={props.fontSize}
+            //       />
+            //     );
+            //   }}
+            // </For> */}
             // </details>
-          )}
+          }
           {props.message.message && (
             <>
-            <span
-              ref={botMessageEl}
-              class="px-4 py-2 ml-2 max-w-full chatbot-host-bubble prose"
-              data-testid="host-bubble"
-              style={{
-                'background-color': props.backgroundColor ?? defaultBackgroundColor,
-                color: props.textColor ?? defaultTextColor,
-                'border-radius': '6px',
-                'font-size': props.fontSize ? `${props.fontSize}px` : `${defaultFontSize}px`,
-              }}
-            />
-            <DownloadFileButton on:click={DocxGenerator(props.message.message)}/>
+              <span
+                ref={botMessageEl}
+                class="px-4 py-2 ml-2 max-w-full chatbot-host-bubble prose"
+                data-testid="host-bubble"
+                style={{
+                  'background-color': props.backgroundColor ?? defaultBackgroundColor,
+                  color: props.textColor ?? defaultTextColor,
+                  'border-radius': '6px',
+                  'font-size': props.fontSize ? `${props.fontSize}px` : `${defaultFontSize}px`,
+                }}
+              />
+              <DownloadFileButton on:click={DocxGenerator(props.message.message)} />
             </>
           )}
           {props.message.action && (
