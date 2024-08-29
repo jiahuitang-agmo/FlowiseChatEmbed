@@ -8,14 +8,13 @@ export const AddImageIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={props.color ?? defaultButtonColor}
-    stroke-width="2"
+    stroke-width="1.25"
     stroke-linecap="round"
     stroke-linejoin="round"
-  >
-    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" />
-    <line x1="16" x2="22" y1="5" y2="5" />
-    <line x1="19" x2="19" y1="2" y2="8" />
-    <circle cx="9" cy="9" r="2" />
-    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+    class="icon icon-tabler icons-tabler-outline icon-tabler-upload">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+      <path d="M7 9l5 -5l5 5" />
+      <path d="M12 4l0 12" />
   </svg>
 );
