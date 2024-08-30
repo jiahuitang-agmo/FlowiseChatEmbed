@@ -22,16 +22,16 @@ export const DownloadFileButton = (props: DownloadFileButtonProps) => {
         color: 'white',
         height: '30px',
         width: '70%',
-        "margin-left": '8px',
-        "margin-top": '10px',
+        'margin-left': '8px',
+        'margin-top': '10px',
         padding: '3px',
-        "border-radius": '3px'
+        'border-radius': '3px',
       }}
     >
-    <Show when={!props.isLoading} fallback={<Spinner class="text-white" />}>
-      <DownloadFileIcon color={props.color} />
-      <span style={{ color: 'white', "font-size": '12px' }}>{props.buttonText}</span>
-    </Show>
+      <Show when={!props.isLoading} fallback={<Spinner class="text-white" />}>
+        <DownloadFileIcon color={props.color} />
+        <span style={{ color: 'white', 'font-size': '12px' }}>{props.buttonText}</span>
+      </Show>
     </button>
   );
 };
