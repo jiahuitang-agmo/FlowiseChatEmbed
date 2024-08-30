@@ -282,7 +282,7 @@ export const BotBubble = (props: Props) => {
               <br />
               <DownloadFileButton
                 buttonText="Download Tender Doc"
-                lastAgent={props.message.agentReasoning?.[props.message.agentReasoning.length - 1]?.agentName} 
+                lastAgent={props.message.agentReasoning?.[props.message.agentReasoning.length - 1]?.agentName}
                 on:click={DocxGenerator(props.message.message)}
               />
             </>
