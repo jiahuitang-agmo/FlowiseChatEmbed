@@ -5,6 +5,7 @@ type DownloadFileButtonProps = {
     isLoading?: boolean;
     disableIcon?: boolean;
     buttonText?: string;
+    lastAgent?: string;
 } & JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 export declare const DownloadFileButton: (props: DownloadFileButtonProps) => JSX.Element;
 export declare const Spinner: (props: JSX.SvgSVGAttributes<SVGSVGElement>) => JSX.Element;

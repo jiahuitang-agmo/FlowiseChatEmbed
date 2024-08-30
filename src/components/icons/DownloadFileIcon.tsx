@@ -9,7 +9,7 @@ export const DownloadFileIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement> & { 
     viewBox="0 0 24 24"
     fill="none"
     stroke={props.color ?? defaultButtonColor}
-    stroke-width="2"
+    stroke-width="1.5"
     stroke-linecap="round"
     stroke-linejoin="round"
   >
