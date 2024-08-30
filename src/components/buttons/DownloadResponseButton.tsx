@@ -28,16 +28,17 @@ export const DownloadFileButton = (props: DownloadFileButtonProps) => {
           border: 'white',
           color: 'white',
           height: '35px',
-          width: '160px',
+          width: '165px',
           'margin-left': '8px',
           'margin-top': '10px',
           'border-radius': '3px',
           'padding-top': '5px',
+          'padding-left': '3px',
         }}
         {...props}
       >
         {!props.disableIcon && <DownloadFileIcon color={props.buttonColor} />}
-        <span style={{ 'padding-left': '10px', 'font-size': '15px', 'margin-top': '3px', 'font-weight': 'bold' }}>{props.buttonText}</span>
+        <span style={{ 'padding-left': '5px', 'font-size': '12px', 'margin-top': '1px', 'font-weight': 'bold' }}>{props.buttonText}</span>
       </button>
     </Show>
   );

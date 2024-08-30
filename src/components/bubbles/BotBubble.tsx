@@ -5,7 +5,7 @@ import { FeedbackRatingType, sendFeedbackQuery, sendFileDownloadQuery, updateFee
 import { IAction, MessageType } from '../Bot';
 import { CopyToClipboardButton, ThumbsDownButton, ThumbsUpButton } from '../buttons/FeedbackButtons';
 import FeedbackContentDialog from '../FeedbackContentDialog';
-import { AgentReasoningBubble } from './AgentReasoningBubble';
+// import { AgentReasoningBubble } from './AgentReasoningBubble';
 import { TickIcon, XIcon } from '../icons';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from 'file-saver';
@@ -282,8 +282,8 @@ export const BotBubble = (props: Props) => {
               <br />
               <DownloadFileButton
                 buttonText="Download Tender Doc"
-                lastAgent={props.message.agentReasoning?.[props.message.agentReasoning.length - 1]?.agentName}
-                onClick={() => DocxGenerator(props.message.message)}
+                lastAgent={props.message.agentReasoning?.[props.message.agentReasoning.length - 1]?.agentName} 
+                on:click={DocxGenerator(props.message.message)}
               />
             </>
           )}
