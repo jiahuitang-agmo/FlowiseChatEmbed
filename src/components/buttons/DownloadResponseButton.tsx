@@ -13,14 +13,17 @@ type DownloadFileButtonProps = {
 
 export const DownloadFileButton = (props: DownloadFileButtonProps) => {
   return (
-    <Show when={(!props.isLoading && (props.lastAgent === 'Supervisor' || props.lastAgent === 'Write Report'))} fallback={<Spinner class="text-white" />}>
+    <Show
+      when={!props.isLoading && (props.lastAgent === 'Supervisor' || props.lastAgent === 'Write Report')}
+      fallback={<Spinner class="text-white" />}
+    >
       <button
         type="submit"
         disabled={props.isDisabled || props.isLoading}
         style={{
           display: 'flex',
-          "align-items": 'left',
-          "justify-content": 'left',
+          'align-items': 'left',
+          'justify-content': 'left',
           background: '#3b81f6',
           border: 'white',
           color: 'white',
@@ -29,14 +32,14 @@ export const DownloadFileButton = (props: DownloadFileButtonProps) => {
           'margin-left': '8px',
           'margin-top': '10px',
           'border-radius': '3px',
-          'padding-top': '5px'
+          'padding-top': '5px',
         }}
         {...props}
       >
-          {!props.disableIcon && <DownloadFileIcon color={props.buttonColor} />}
-          <span style={{ 'padding-left': '10px', 'font-size': '15px', 'margin-top': '3px', 'font-weight': 'bold' }}>{props.buttonText}</span>
-        </button>
-      </Show>
+        {!props.disableIcon && <DownloadFileIcon color={props.buttonColor} />}
+        <span style={{ 'padding-left': '10px', 'font-size': '15px', 'margin-top': '3px', 'font-weight': 'bold' }}>{props.buttonText}</span>
+      </button>
+    </Show>
   );
 };
 
