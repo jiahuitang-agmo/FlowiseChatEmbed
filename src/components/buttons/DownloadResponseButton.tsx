@@ -12,11 +12,16 @@ type DownloadFileButtonProps = {
 
 export const DownloadFileButton = (props: DownloadFileButtonProps) => {
   return (
-    <button type="submit" disabled={props.isDisabled || props.isLoading} {...props} style={{ background: '#3b81f6', border: 'white', color: 'white', height:'30px', width: '70%'}}>
+    <button
+      type="submit"
+      disabled={props.isDisabled || props.isLoading}
+      {...props}
+      style={{ background: '#3b81f6', border: 'white', color: 'white', height: '30px', width: '70%' }}
+    >
       <Show when={!props.isLoading} fallback={<Spinner class="text-white" />}>
         {!props.disableIcon && <DownloadFileIcon color={props.color} />}
       </Show>
-      {props.buttonText && <span style="color:white">{props.buttonText}</span>}
+      {props.buttonText && <span style={{ color: 'white' }}>{props.buttonText}</span>}
     </button>
   );
 };
