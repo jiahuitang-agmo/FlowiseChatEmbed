@@ -21,7 +21,7 @@ export const DownloadFileButton = (props: DownloadFileButtonProps) => {
         border: 'white',
         color: 'white',
         height: '30px',
-        width: '70%',
+        width: '100px',
         'margin-left': '8px',
         'margin-top': '10px',
         padding: '3px',

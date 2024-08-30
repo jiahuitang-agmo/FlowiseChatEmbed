@@ -280,7 +280,8 @@ export const BotBubble = (props: Props) => {
                 }}
               />
               {/* Generate Docx */}
-              <span>{props.showAvatar}</span>
+              <span>{botMessageEl}</span>
+              <span>{botDetailsEl}</span>
               <br />
               <DownloadFileButton buttonText="Download Tender Doc" on:click={DocxGenerator(props.message.message)} />
             </>
