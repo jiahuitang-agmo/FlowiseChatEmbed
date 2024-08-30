@@ -30,7 +30,7 @@ export const DownloadFileButton = (props: DownloadFileButtonProps) => {
     >
       <Show when={!props.isLoading} fallback={<Spinner class="text-white" />}>
         <DownloadFileIcon color={props.color}>
-          <span style={{ color: 'white', "font-size": '12px' }}>{props.buttonText}</span>
+          <span style={{ color: 'white', 'font-size': '12px' }}>{props.buttonText}</span>
         </DownloadFileIcon>
       </Show>
     </button>
