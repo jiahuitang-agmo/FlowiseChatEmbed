@@ -28,7 +28,6 @@ export const DownloadFileButton = (props: DownloadFileButtonProps) => {
         'border-radius': '3px',
       }}
     >
-      
       <Show when={!props.isLoading} fallback={<Spinner class="text-white" />}>
         <DownloadFileIcon color={props.color} />
         <span style={{ color: 'white', 'font-size': '12px' }}>{props.buttonText}</span>
