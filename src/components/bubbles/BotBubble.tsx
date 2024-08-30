@@ -259,6 +259,7 @@ export const BotBubble = (props: Props) => {
     }
   });
 
+  
   return (
     <div>
       <div class="flex flex-row justify-start mb-2 items-start host-container" style={{ 'margin-right': '50px' }}>
