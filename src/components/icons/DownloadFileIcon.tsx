@@ -1,6 +1,6 @@
 import { JSX } from 'solid-js/jsx-runtime';
 const defaultButtonColor = '#ffffff';
-export const DownloadFileIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => (
+export const DownloadFileIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement> & { children?: JSX.Element }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="icon icon-tabler icons-tabler-outline icon-tabler-file-download"
@@ -18,5 +18,6 @@ export const DownloadFileIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => 
     <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
     <path d="M12 17v-6" />
     <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" />
+    {props.children}
   </svg>
 );
