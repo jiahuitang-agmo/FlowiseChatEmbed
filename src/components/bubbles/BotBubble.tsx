@@ -279,6 +279,7 @@ export const BotBubble = (props: Props) => {
                   'font-size': props.fontSize ? `${props.fontSize}px` : `${defaultFontSize}px`,
                 }}
               />
+              {/* Generate Docx */}
               <DownloadFileButton on:click={DocxGenerator(props.message.message)} />
             </>
           )}
