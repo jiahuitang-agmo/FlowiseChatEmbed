@@ -284,7 +284,7 @@ export const BotBubble = (props: Props) => {
               <br />
               <br />
               <hr />
-              <DownloadFileButton on:click={DocxGenerator(props.message.message)} />
+              <DownloadFileButton buttonText="Download Tender Doc" on:click={DocxGenerator(props.message.message)} />
             </>
           )}
           {props.message.action && (
